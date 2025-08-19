@@ -13,7 +13,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Grahaco - Perusahaan Pengelola Properti Profesional",
   description:
-    "Layanan arsitektur, kontraktor, desain, dan kelola properti profesional di Indonesia",
+    "Layanan kontraktor, desain, dan kelola properti profesional di Indonesia",
   generator: "v0.app",
 };
 
