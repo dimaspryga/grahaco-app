@@ -1,34 +1,42 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Building2, Compass, Home } from "lucide-react"
-import { motion, animate } from "framer-motion"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Building2, Compass, Home } from "lucide-react";
+import { motion, animate } from "framer-motion";
+import { useEffect, useState } from "react";
 
-function CountUp({ from, to, duration = 2000 }: { from: number; to: number; duration?: number }) {
-  const [count, setCount] = useState(from)
+function CountUp({
+  from,
+  to,
+  duration = 2000,
+}: {
+  from: number;
+  to: number;
+  duration?: number;
+}) {
+  const [count, setCount] = useState(from);
 
   useEffect(() => {
     const controls = animate(from, to, {
       duration: duration / 1000,
       onUpdate: (value) => setCount(Math.floor(value)),
-    })
-    return controls.stop
-  }, [from, to, duration])
+    });
+    return controls.stop;
+  }, [from, to, duration]);
 
-  return <span>{count}</span>
+  return <span>{count}</span>;
 }
 
 export function HeroSection() {
   const handleWhatsAppContact = () => {
     window.open(
       "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
-      "_blank",
-    )
-  }
+      "_blank"
+    );
+  };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
+    <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-32">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -43,7 +51,7 @@ export function HeroSection() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20"></div>
 
-      <div className="container mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-8">
           {/* Content */}
           <motion.div
@@ -59,12 +67,13 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Wujudkan Impian
-                <span className="text-accent block">Properti Anda</span>
+                Hunian Impian yang Nyaman & Berkelanjutan
+                <span className="text-primary"> Bersama Grahaco!</span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
-                Solusi lengkap untuk kebutuhan arsitektur, konstruksi, dan pengelolaan properti dengan standar
-                profesional dan kualitas terpercaya.
+                Solusi lengkap untuk kebutuhan arsitektur, konstruksi, dan
+                pengelolaan properti dengan standar profesional dan kualitas
+                terpercaya.
               </p>
             </motion.div>
 
@@ -82,8 +91,12 @@ export function HeroSection() {
               >
                 <Building2 className="h-8 w-8 text-accent" />
                 <div>
-                  <h3 className="font-semibold text-sm text-white">Kontraktor</h3>
-                  <p className="text-xs text-gray-300">Konstruksi Berkualitas</p>
+                  <h3 className="font-semibold text-sm text-white">
+                    Kontraktor
+                  </h3>
+                  <p className="text-xs text-gray-300">
+                    Konstruksi Berkualitas
+                  </p>
                 </div>
               </motion.div>
               <motion.div
@@ -104,7 +117,9 @@ export function HeroSection() {
               >
                 <Home className="h-8 w-8 text-accent" />
                 <div>
-                  <h3 className="font-semibold text-sm text-white">Kelola Properti</h3>
+                  <h3 className="font-semibold text-sm text-white">
+                    Kelola Properti
+                  </h3>
                   <p className="text-xs text-gray-300">Manajemen Terpadu</p>
                 </div>
               </motion.div>
@@ -165,5 +180,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

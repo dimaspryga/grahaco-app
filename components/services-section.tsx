@@ -3,46 +3,12 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Building2, Compass, Home, ArrowRight, MessageCircle } from "lucide-react"
+import { ArrowRight, MessageCircle } from "lucide-react"
 import { motion } from "framer-motion"
+import { useServicesData } from "@/hooks/use-services-data"
 
 export function ServicesSection() {
-  const handleWhatsAppContact = (service: string) => {
-    window.open(
-      `https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20${service}`,
-      "_blank",
-    )
-  }
-
-  const services = [
-    {
-      icon: Building2,
-      title: "Kontraktor",
-      description: "Layanan konstruksi profesional dengan standar kualitas tinggi dan tepat waktu.",
-      features: ["Konstruksi Bangunan", "Renovasi & Remodeling", "Project Management", "Quality Control"],
-      href: "/services/kontraktor",
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-    },
-    {
-      icon: Compass,
-      title: "Desain",
-      description: "Desain arsitektur inovatif yang menggabungkan estetika modern dengan fungsionalitas.",
-      features: ["Desain Arsitektur", "Interior Design", "3D Visualization", "Konsultasi Desain"],
-      href: "/services/desain",
-      color: "text-green-600",
-      bgColor: "bg-green-50",
-    },
-    {
-      icon: Home,
-      title: "Kelola Properti",
-      description: "Manajemen properti terpadu untuk memaksimalkan nilai investasi Anda.",
-      features: ["Property Management", "Maintenance Service", "Tenant Management", "Investment Advisory"],
-      href: "/services/kelola-properti",
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
-    },
-  ]
+  const { services, handleWhatsAppContact } = useServicesData()
 
   return (
     <section id="services" className="py-20 bg-muted/30">
