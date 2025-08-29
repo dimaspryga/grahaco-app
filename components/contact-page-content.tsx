@@ -104,26 +104,21 @@ export function ContactPageContent() {
     {
       icon: MapPin,
       title: "Alamat Kantor",
-      content: "Jakarta Pusat, 10220\nIndonesia",
+      content: "Jl. Retno Dumilah 2 C, Kotagede, Kota Yogyakarta",
     },
     {
       icon: Clock,
       title: "Jam Operasional",
       content:
-        "Senin - Jumat: 08:00 - 17:00\nSabtu: 08:00 - 15:00\nMinggu: Tutup",
+        "Senin - Jumat: 08:00 - 16:00\nSabtu: 08:00 - 14:00\nMinggu: Tutup",
     },
-    // {
-    //   icon: Building2,
-    //   title: "Kantor Cabang",
-    //   content: "Tangerang, Bekasi, Bogor\nDepok, Bandung\nSurabaya",
-    // },
   ];
 
   const whyChooseUs = [
     {
       icon: CheckCircle,
       title: "Respons Cepat",
-      description: "Tim kami akan merespons dalam 24 jam",
+      description: "Tim kami akan merespons dalam Jam Operasional",
     },
     {
       icon: Users,
@@ -417,43 +412,6 @@ export function ContactPageContent() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center space-y-4 mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-foreground">
-              Lokasi Kantor
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Temukan lokasi kantor kami yang strategis di Jakarta Pusat
-            </p>
-          </motion.div>
-          <motion.div
-            className="aspect-video rounded-lg overflow-hidden bg-muted"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="text-center space-y-2">
-                <MapPin className="h-12 w-12 text-primary mx-auto" />
-                <p className="text-muted-foreground">Interactive Map</p>
-                <p className="text-sm text-muted-foreground">
-                  Jakarta, Indonesia
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

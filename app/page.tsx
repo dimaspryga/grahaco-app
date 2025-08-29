@@ -7,6 +7,7 @@ import { WhyGrahacoSection } from "@/components/why-grahaco-section";
 import { GrahacoSolutionsSection } from "@/components/grahaco-solutions-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { PackagesSection } from "@/components/packages-section";
+import { FAQSection } from "@/components/faq-section";
 import { GallerySection } from "@/components/gallery-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <GrahacoSolutionsSection />
       <TestimonialsSection />
       <PackagesSection />
+      <FAQSection />
       <GallerySection />
       <ContactSection />
       <Footer />

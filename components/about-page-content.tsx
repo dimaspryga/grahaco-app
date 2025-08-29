@@ -19,6 +19,7 @@ import {
   Eye,
   Heart,
   MessageCircle,
+  Building,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -30,57 +31,55 @@ export function AboutPageContent() {
     );
   };
 
-  const teamMembers = [
-    {
-      name: "Grahaco Founder",
-      role: "Founder & CEO",
-      experience: "20+ tahun",
-      specialization: "Arsitektur & Manajemen Proyek",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      name: "Grahaco Lead Designer",
-      role: "Head of Design",
-      experience: "15+ tahun",
-      specialization: "Interior & Landscape Design",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      name: "Grahaco Construction Manager",
-      role: "Construction Manager",
-      experience: "18+ tahun",
-      specialization: "Konstruksi & Quality Control",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      name: "Grahaco Marketing Director",
-      role: "Property Manager",
-      experience: "12+ tahun",
-      specialization: "Property Management & Investment",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "Grahaco Founder",
+  //     role: "Founder & CEO",
+  //     experience: "20+ tahun",
+  //     specialization: "Arsitektur & Manajemen Proyek",
+  //     image: "/placeholder.svg?height=300&width=300",
+  //   },
+  //   {
+  //     name: "Grahaco Lead Designer",
+  //     role: "Head of Design",
+  //     experience: "15+ tahun",
+  //     specialization: "Interior & Landscape Design",
+  //     image: "/placeholder.svg?height=300&width=300",
+  //   },
+  //   {
+  //     name: "Grahaco Construction Manager",
+  //     role: "Construction Manager",
+  //     experience: "18+ tahun",
+  //     specialization: "Konstruksi & Quality Control",
+  //     image: "/placeholder.svg?height=300&width=300",
+  //   },
+  //   {
+  //     name: "Grahaco Marketing Director",
+  //     role: "Property Manager",
+  //     experience: "12+ tahun",
+  //     specialization: "Property Management & Investment",
+  //     image: "/placeholder.svg?height=300&width=300",
+  //   },
+  // ];
 
   const achievements = [
     {
-      icon: Building2,
-      title: "500+ Proyek Selesai",
-      description: "Berbagai jenis proyek dari residensial hingga komersial",
-    },
-    {
       icon: Users,
-      title: "50+ Tim Profesional",
-      description: "Arsitek, engineer, dan teknisi berpengalaman",
+      title: "51+ Klien Konsultan",
+      description:
+        "Lebih dari 50 klien telah mempercayakan konsultasi hunian mereka kepada Grahaco.",
     },
     {
-      icon: Award,
-      title: "15+ Penghargaan",
-      description: "Pengakuan industri atas kualitas dan inovasi",
+      icon: Building2,
+      title: "12+ Desain Rumah",
+      description:
+        "Kami telah menyelesaikan lebih dari 12 desain rumah yang disesuaikan dengan kebutuhan dan gaya hidup klien",
     },
     {
-      icon: Target,
-      title: "98% Kepuasan Klien",
-      description: "Tingkat kepuasan yang konsisten tinggi",
+      icon: Building,
+      title: "100+ Proyek Konstruksi",
+      description:
+        "Grahaco berhasil menuntaskan lebih dari 100 proyek konstruksi dengan berbagai skala, tepat waktu, dan sesuai harapan.",
     },
   ];
 
@@ -150,10 +149,9 @@ export function AboutPageContent() {
                   <span className="text-primary block">Bersama Grahaco</span>
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Dengan pengalaman lebih dari 15 tahun, Grahaco telah menjadi
-                  mitra terpercaya dalam mewujudkan impian properti Anda. Kami
-                  menghadirkan solusi lengkap dari desain hingga konstruksi
-                  dengan standar kualitas internasional.
+                  Grahaco akan menjadi mitra terpercaya dalam mewujudkan impian
+                  properti Anda. Kami menghadirkan solusi lengkap dari desain
+                  hingga konstruksi dengan standar kualitas internasional.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -205,23 +203,17 @@ export function AboutPageContent() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Grahaco didirikan pada tahun 2008 dengan visi menjadi
-                  perusahaan konstruksi dan properti terdepan di Indonesia.
-                  Berawal dari tim kecil yang berdedikasi, kami telah berkembang
-                  menjadi perusahaan dengan lebih dari 50 profesional
-                  berpengalaman.
+                  Grahaco adalah perusahaan kontraktor yang berdiri sejak tahun
+                  2024 dengan fokus pada arsitektur, desain interior,
+                  pembangunan, dan renovasi rumah. Kami menghadirkan layanan
+                  terintegrasi mulai dari perencanaan hingga pelaksanaan, dengan
+                  menekankan solusi kreatif, fungsional, dan ramah lingkungan.
                 </p>
                 <p>
-                  Perjalanan kami dimulai dengan proyek-proyek residensial
-                  kecil, namun dengan komitmen pada kualitas dan inovasi, kami
-                  berhasil menangani proyek-proyek besar termasuk kompleks
-                  perumahan, gedung perkantoran, dan fasilitas komersial.
-                </p>
-                <p>
-                  Hari ini, Grahaco telah menyelesaikan lebih dari 500 proyek
-                  dengan tingkat kepuasan klien mencapai 98%. Kami terus
-                  berinovasi dengan mengadopsi teknologi terbaru dan praktik
-                  berkelanjutan dalam setiap proyek yang kami kerjakan.
+                  Dengan pendekatan profesional dan pengalaman tim ahli, Grahaco
+                  membantu mewujudkan hunian impian yang tidak hanya nyaman,
+                  tetapi juga berkelanjutan dan selaras dengan kebutuhan hidup
+                  modern.
                 </p>
               </div>
             </motion.div>
@@ -363,7 +355,7 @@ export function AboutPageContent() {
               Prestasi yang membanggakan dalam perjalanan kami melayani klien
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {achievements.map((achievement, index) => {
               const IconComponent = achievement.icon;
               return (
@@ -374,13 +366,14 @@ export function AboutPageContent() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
+                  className="h-full" // Tambahkan h-full di sini untuk keamanan, meskipun Grid sudah melakukannya
                 >
-                  <Card className="text-center border-0 bg-card hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6 space-y-4">
+                  <Card className="text-center border-0 bg-card hover:shadow-lg transition-shadow h-full flex flex-col">
+                    <CardContent className="p-6 space-y-4 flex-1 flex flex-col justify-center">
                       <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto">
                         <IconComponent className="h-8 w-8 text-primary" />
                       </div>
-                      <div>
+                      <div className="flex-1 flex flex-col justify-center">
                         <h3 className="text-xl font-bold text-foreground mb-2">
                           {achievement.title}
                         </h3>
@@ -450,7 +443,7 @@ export function AboutPageContent() {
       </section>
 
       {/* Team */}
-      <section id="team" className="py-20 bg-background">
+      {/* <section id="team" className="py-20 bg-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center space-y-4 mb-16"
@@ -509,7 +502,7 @@ export function AboutPageContent() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">

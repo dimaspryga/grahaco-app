@@ -37,19 +37,22 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-32">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
-        }}
-      ></div>
+      {/* Background Container with overflow control */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
+          }}
+        ></div>
 
-      {/* Dark Overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20"></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20"></div>
+      </div>
 
       <div className="container mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-8">
@@ -159,21 +162,21 @@ export function HeroSection() {
             >
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-accent">
-                  <CountUp from={0} to={500} duration={2000} />+
+                  <CountUp from={0} to={51} duration={2000} />+
                 </div>
-                <div className="text-sm text-gray-300">Proyek Selesai</div>
+                <div className="text-sm text-gray-300">Klien Konsultan</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-accent">
-                  <CountUp from={0} to={15} duration={2000} />+
+                  <CountUp from={0} to={12} duration={2000} />+
                 </div>
-                <div className="text-sm text-gray-300">Tahun Pengalaman</div>
+                <div className="text-sm text-gray-300">Klien Konsultan</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-accent">
-                  <CountUp from={0} to={98} duration={2000} />%
+                  <CountUp from={0} to={100} duration={2000} />+
                 </div>
-                <div className="text-sm text-gray-300">Kepuasan Klien</div>
+                <div className="text-sm text-gray-300">Proyek Konstruksi</div>
               </div>
             </motion.div>
           </motion.div>
