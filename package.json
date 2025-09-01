@@ -54,6 +54,7 @@
     "react-countup": "latest",
     "react-day-picker": "latest",
     "react-dom": "^19",
+    "react-floating-whatsapp": "^5.0.8",
     "react-hook-form": "latest",
     "react-resizable-panels": "latest",
     "recharts": "latest",
