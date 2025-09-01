@@ -1,14 +1,20 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, MessageCircle } from "lucide-react"
-import { motion } from "framer-motion"
-import { useServicesData } from "@/hooks/use-services-data"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { useServicesData } from "@/hooks/use-services-data";
 
 export function ServicesSection() {
-  const { services, handleWhatsAppContact } = useServicesData()
+  const { services, handleWhatsAppContact } = useServicesData();
 
   return (
     <section id="services" className="py-20 bg-muted/30">
@@ -21,17 +27,19 @@ export function ServicesSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Layanan Profesional Kami</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Layanan Profesional Kami
+          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Kami menyediakan solusi lengkap untuk semua kebutuhan properti Anda dengan tim ahli berpengalaman dan
-            teknologi terdepan.
+            Kami menyediakan solusi lengkap untuk semua kebutuhan properti Anda
+            dengan tim ahli berpengalaman dan teknologi terdepan.
           </p>
         </motion.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const IconComponent = service.icon
+            const IconComponent = service.icon;
             return (
               <motion.div
                 key={index}
@@ -48,21 +56,33 @@ export function ServicesSection() {
                       <IconComponent className={`h-8 w-8 ${service.color}`} />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground mt-2">{service.description}</CardDescription>
+                      <CardTitle className="text-xl font-bold">
+                        {service.title}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground mt-2">
+                        {service.description}
+                      </CardDescription>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                        <li
+                          key={featureIndex}
+                          className="flex items-center text-sm text-muted-foreground"
+                        >
                           <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <div className="flex flex-col sm:flex-row gap-2">
-                      <Button asChild variant="default" size="sm" className="flex-1">
+                      <Button
+                        asChild
+                        variant="default"
+                        size="sm"
+                        className="flex-1"
+                      >
                         <Link href={service.href}>
                           Detail
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -81,7 +101,7 @@ export function ServicesSection() {
                   </CardContent>
                 </Card>
               </motion.div>
-            )
+            );
           })}
         </div>
 
@@ -94,10 +114,12 @@ export function ServicesSection() {
           viewport={{ once: true }}
         >
           <div className="bg-primary rounded-2xl p-8 sm:p-12 text-primary-foreground">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">Siap Memulai Proyek Anda?</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+              Siap Memulai Proyek Anda?
+            </h3>
             <p className="text-lg mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              Konsultasikan kebutuhan properti Anda dengan tim ahli kami. Dapatkan solusi terbaik untuk investasi masa
-              depan.
+              Konsultasikan kebutuhan properti Anda dengan tim ahli kami.
+              Dapatkan solusi terbaik untuk investasi masa depan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -122,5 +144,5 @@ export function ServicesSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

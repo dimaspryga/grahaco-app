@@ -30,7 +30,7 @@ function CountUp({
 export function HeroSection() {
   const handleWhatsAppContact = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
+      "https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
       "_blank"
     );
   };

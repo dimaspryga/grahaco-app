@@ -29,7 +29,7 @@ export function TestimonialsSection() {
   const translateXValue = currentIndex * (100 / testimonials.length);
 
   return (
-    <section className="py-16 sm:py-20 bg-background">
+    <section className="py-16 sm:py-20 bg-background z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16"
@@ -121,7 +121,7 @@ export function TestimonialsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg pointer-events-auto"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg pointer-events-auto"
               onClick={prevSlide} // Memanggil fungsi prevSlide
             >
               <ChevronLeft className="h-4 w-4" />
@@ -129,7 +129,7 @@ export function TestimonialsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg pointer-events-auto"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg pointer-events-auto"
               onClick={nextSlide} // Memanggil fungsi nextSlide
             >
               <ChevronRight className="h-4 w-4" />

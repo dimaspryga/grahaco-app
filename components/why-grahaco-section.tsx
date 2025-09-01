@@ -9,7 +9,7 @@ export function WhyGrahacoSection() {
   const { stats } = useStatsData();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center space-y-6 mb-16"

@@ -1,23 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, MessageCircle } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { useNavbarScroll } from "@/hooks/use-navbar-scroll"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useNavbarScroll } from "@/hooks/use-navbar-scroll";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const { isVisible } = useNavbarScroll()
+  const [isOpen, setIsOpen] = useState(false);
+  const { isVisible } = useNavbarScroll();
 
   const handleWhatsAppClick = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
-      "_blank",
-    )
-  }
+      "https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
+      "_blank"
+    );
+  };
 
   return (
     <nav
@@ -29,11 +34,16 @@ export function Navbar() {
         <div className="flex h-14 sm:h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="h-6 w-6 sm:h-8 sm:w-8 rounded bg-primary"></div>
-            <span className="text-lg sm:text-xl font-bold text-primary">Grahaco</span>
+            <span className="text-lg sm:text-xl font-bold text-primary">
+              Grahaco
+            </span>
           </Link>
 
           <div className="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
-            <Link href="/" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/"
+              className="text-sm lg:text-base text-foreground hover:text-primary transition-colors"
+            >
               Home
             </Link>
 
@@ -55,10 +65,16 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/about" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/about"
+              className="text-sm lg:text-base text-foreground hover:text-primary transition-colors"
+            >
               Tentang Kami
             </Link>
-            <Link href="/contact" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/contact"
+              className="text-sm lg:text-base text-foreground hover:text-primary transition-colors"
+            >
               Kontak
             </Link>
           </div>
@@ -74,8 +90,17 @@ export function Navbar() {
               <span className="lg:hidden">WA</span>
             </Button>
 
-            <Button variant="ghost" size="sm" className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden p-2"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -133,7 +158,10 @@ export function Navbar() {
                   Kontak
                 </Link>
                 <div className="pt-2">
-                  <Button onClick={handleWhatsAppClick} className="w-full bg-accent hover:bg-accent/90">
+                  <Button
+                    onClick={handleWhatsAppClick}
+                    className="w-full bg-accent hover:bg-accent/90"
+                  >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     WhatsApp
                   </Button>
@@ -144,5 +172,5 @@ export function Navbar() {
         </AnimatePresence>
       </div>
     </nav>
-  )
+  );
 }

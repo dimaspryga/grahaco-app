@@ -9,7 +9,7 @@ export function AboutSection() {
   const { values } = useValuesData();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}

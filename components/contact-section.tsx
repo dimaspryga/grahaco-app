@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 export function ContactSection() {
   const handleWhatsAppContact = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20untuk%20berkonsultasi",
+      "https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20untuk%20berkonsultasi",
       "_blank"
     );
   };
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30 z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* CTA Section */}
         <motion.div

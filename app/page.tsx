@@ -12,6 +12,7 @@ import { GallerySection } from "@/components/gallery-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import FloatingWhatsAppButton from "@/components/floating-whatsapp";
 
 export default function HomePage() {
   return (
@@ -29,6 +30,7 @@ export default function HomePage() {
       <GallerySection />
       <ContactSection />
       <Footer />
+      <FloatingWhatsAppButton />
       <ScrollToTop />
     </main>
   );

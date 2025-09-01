@@ -14,7 +14,7 @@ import {
 export function Footer() {
   const handleWhatsAppContact = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
+      "https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20Anda",
       "_blank"
     );
   };
@@ -24,7 +24,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground z-10">
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -131,7 +131,7 @@ export function Footer() {
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <span className="text-primary-foreground/80">
-                  +62 812-3456-7890
+                  +62 857-3013-4736
                 </span>
               </div>
               <div className="flex items-center space-x-2">

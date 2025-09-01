@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import { useProblemsData } from "@/hooks/use-problems-data"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useProblemsData } from "@/hooks/use-problems-data";
 
 export function ProblemsSection() {
-  const { problems } = useProblemsData()
+  const { problems } = useProblemsData();
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30 z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center space-y-6 mb-16"
@@ -28,7 +28,7 @@ export function ProblemsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {problems.map((problem, index) => {
-            const IconComponent = problem.icon
+            const IconComponent = problem.icon;
             return (
               <motion.div
                 key={index}
@@ -43,12 +43,14 @@ export function ProblemsSection() {
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <IconComponent className="h-6 w-6 text-primary" />
                       </div>
-                      <p className="text-foreground leading-relaxed">{problem.text}</p>
+                      <p className="text-foreground leading-relaxed">
+                        {problem.text}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
-            )
+            );
           })}
         </div>
 
@@ -59,12 +61,17 @@ export function ProblemsSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg text-foreground font-medium">Mulai langkah pertama Anda membangun rumah impian!</p>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+          <p className="text-lg text-foreground font-medium">
+            Mulai langkah pertama Anda membangun rumah impian!
+          </p>
+          <Button
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground"
+          >
             Klik di sini sekarang!
           </Button>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

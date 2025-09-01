@@ -21,7 +21,6 @@ import {
   MessageCircle,
   Clock,
   Send,
-  Building2,
   Users,
   Calendar,
   CheckCircle,
@@ -39,7 +38,7 @@ export function ContactPageContent() {
 
   const handleWhatsAppContact = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20untuk%20berkonsultasi",
+      "https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20untuk%20berkonsultasi",
       "_blank"
     );
   };
@@ -49,7 +48,7 @@ export function ContactPageContent() {
   };
 
   const handlePhoneContact = () => {
-    window.open("tel:+6281234567890", "_blank");
+    window.open("tel:+6285730134736", "_blank");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -57,7 +56,7 @@ export function ContactPageContent() {
     // Handle form submission
     const message = `Halo Grahaco, saya ${formData.name}. Saya tertarik dengan layanan ${formData.service}. ${formData.message}`;
     window.open(
-      `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`,
+      `https://wa.me/6285730134736?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
@@ -78,7 +77,7 @@ export function ContactPageContent() {
       icon: Phone,
       title: "Telepon",
       description: "Hubungi kami langsung",
-      value: "+62 812-3456-7890",
+      value: "+62 857-3013-4736",
       action: handlePhoneContact,
       buttonText: "Telepon Sekarang",
     },
@@ -86,7 +85,7 @@ export function ContactPageContent() {
       icon: MessageCircle,
       title: "WhatsApp",
       description: "Chat langsung dengan tim kami",
-      value: "+62 812-3456-7890",
+      value: "+62 857-3013-4736",
       action: handleWhatsAppContact,
       buttonText: "Chat WhatsApp",
     },

@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import { useSolutionsData } from "@/hooks/use-solutions-data"
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useSolutionsData } from "@/hooks/use-solutions-data";
 
 export function GrahacoSolutionsSection() {
-  const { solutions } = useSolutionsData()
+  const { solutions } = useSolutionsData();
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30 z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center space-y-6 mb-16"
@@ -17,7 +17,9 @@ export function GrahacoSolutionsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Grahaco</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Grahaco
+          </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
             Solusi Lengkap untuk Desain, Konstruksi, dan Interior Rumah
           </p>
@@ -25,7 +27,7 @@ export function GrahacoSolutionsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => {
-            const IconComponent = solution.icon
+            const IconComponent = solution.icon;
             return (
               <motion.div
                 key={index}
@@ -40,16 +42,20 @@ export function GrahacoSolutionsSection() {
                       <IconComponent className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">{solution.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{solution.description}</p>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        {solution.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {solution.description}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

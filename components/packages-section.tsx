@@ -1,16 +1,19 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import { usePackagesData, usePackageNavigation } from "@/hooks/use-packages-data"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import {
+  usePackagesData,
+  usePackageNavigation,
+} from "@/hooks/use-packages-data";
 
 export function PackagesSection() {
-  const { packages } = usePackagesData()
-  const { activePackage, scrollToPackage } = usePackageNavigation(packages)
+  const { packages } = usePackagesData();
+  const { activePackage, scrollToPackage } = usePackageNavigation(packages);
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30 z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center space-y-6 mb-16"
@@ -19,10 +22,14 @@ export function PackagesSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Pilihan Paket Konstruksi</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Pilihan Paket Konstruksi
+          </h2>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            Grahaco menghadirkan paket konstruksi fleksibel sesuai kebutuhan dan anggaran Anda. Dengan material terjamin
-            dan standar kerja yang konsisten, setiap rumah dibangun secara efisien dan berkualitas tinggi.
+            Grahaco menghadirkan paket konstruksi fleksibel sesuai kebutuhan dan
+            anggaran Anda. Dengan material terjamin dan standar kerja yang
+            konsisten, setiap rumah dibangun secara efisien dan berkualitas
+            tinggi.
           </p>
         </motion.div>
 
@@ -67,16 +74,25 @@ export function PackagesSection() {
                   <CardContent className="p-6 space-y-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div>
-                        <h3 className="text-2xl font-bold text-foreground">{pkg.title}</h3>
-                        <p className="text-3xl font-bold text-primary mt-2">{pkg.price}</p>
+                        <h3 className="text-2xl font-bold text-foreground">
+                          {pkg.title}
+                        </h3>
+                        <p className="text-3xl font-bold text-primary mt-2">
+                          {pkg.price}
+                        </p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {pkg.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start space-x-3 p-3 rounded-lg bg-muted/30">
+                        <div
+                          key={featureIndex}
+                          className="flex items-start space-x-3 p-3 rounded-lg bg-muted/30"
+                        >
                           <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
+                          <span className="text-sm text-muted-foreground leading-relaxed">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -94,10 +110,13 @@ export function PackagesSection() {
               viewport={{ once: true }}
             >
               <p className="text-muted-foreground">
-                *Harga dapat disesuaikan dengan tambahan fasilitas khusus atau perubahan desain yang diinginkan dari
-                klien
+                *Harga dapat disesuaikan dengan tambahan fasilitas khusus atau
+                perubahan desain yang diinginkan dari klien
               </p>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              >
                 Cek estimasi hunian Anda
               </Button>
             </motion.div>
@@ -105,5 +124,5 @@ export function PackagesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
