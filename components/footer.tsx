@@ -10,6 +10,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const handleWhatsAppContact = () => {
@@ -30,8 +31,13 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded bg-primary-foreground"></div>
-              <span className="text-xl font-bold">Grahaco</span>
+              <Image
+                src="/logo-10.png"
+                alt="Grahaco Logo"
+                width={180}
+                height={180}
+                className="object-contain"
+              />
             </div>
             <p className="text-sm text-primary-foreground/80">
               Solusi terpercaya untuk kebutuhan arsitektur, konstruksi, dan

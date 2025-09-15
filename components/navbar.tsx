@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useNavbarScroll } from "@/hooks/use-navbar-scroll";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +34,13 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-6 w-6 sm:h-8 sm:w-8 rounded bg-primary"></div>
-            <span className="text-lg sm:text-xl font-bold text-primary">
-              Grahaco
-            </span>
+            <Image
+              src="/logo-09.png"
+              alt="Grahaco Logo"
+              width={160}
+              height={160}
+              className="lg:w-45 lg:h-45 object-contain"
+            />
           </Link>
 
           <div className="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
