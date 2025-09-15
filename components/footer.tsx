@@ -32,7 +32,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Image
-                src="./logo-10.png"
+                src="./Logo-10.png"
                 alt="Grahaco Logo"
                 width={180}
                 height={180}
