@@ -35,7 +35,7 @@ export function Navbar() {
         <div className="flex h-14 sm:h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo-09.png"
+              src="./logo-09.png"
               alt="Grahaco Logo"
               width={160}
               height={160}
