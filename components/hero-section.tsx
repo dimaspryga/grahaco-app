@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Building2, Compass, Home } from "lucide-react";
 import { motion, animate } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 function CountUp({
   from,
@@ -40,12 +41,15 @@ export function HeroSection() {
       {/* Background Container with overflow control */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat">
+          <Image
+            src="./gchero.png"
+            alt="Hero Background"
+            className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
+          />
+        </div>
 
         {/* Dark Overlay for text readability */}
         <div className="absolute inset-0 bg-black/50"></div>
@@ -71,7 +75,10 @@ export function HeroSection() {
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Hunian Impian yang Nyaman & Berkelanjutan
-                <span className="text-primary"> Bersama Grahaco!</span>
+                <span className="text-primary text-shadow-lg text-shadow-amber-50">
+                  {" "}
+                  Bersama Grahaco!
+                </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
                 Solusi lengkap untuk kebutuhan arsitektur, konstruksi, dan
