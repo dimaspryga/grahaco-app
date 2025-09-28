@@ -22,11 +22,12 @@ import {
   Building,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function AboutPageContent() {
   const handleWhatsAppContact = () => {
     window.open(
-      "https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20perusahaan%20Anda",
+      "https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20perusahaan%20Anda",
       "_blank"
     );
   };
@@ -163,9 +164,9 @@ export function AboutPageContent() {
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Hubungi via WhatsApp
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                {/* <Button variant="outline" size="lg" asChild>
                   <a href="#team">Lihat Tim Kami</a>
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
             <motion.div
@@ -176,10 +177,11 @@ export function AboutPageContent() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="aspect-square rounded-2xl overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=600&width=600"
-                  alt="Grahaco Office"
-                  className="w-full h-full object-cover"
+                <Image
+                  src={"./master-logo.jpg"}
+                  alt="Grahaco"
+                  width={600}
+                  height={600}
                 />
               </div>
             </motion.div>
@@ -191,6 +193,42 @@ export function AboutPageContent() {
       <section className="py-20 bg-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              className="grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.img
+                src="/desain rumah/rumah modern 2.png"
+                alt="Company History 1"
+                className="w-full h-48 object-cover rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.img
+                src="/desain rumah/rumah tropis 2.png"
+                alt="Company History 2"
+                className="w-full h-48 object-cover rounded-lg mt-8"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.img
+                src="/proses pembangunan/Renovasi Rumah Surabaya.png"
+                alt="Company History 3"
+                className="w-full h-48 object-cover rounded-lg -mt-8"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.img
+                src="/proses pembangunan/Pembangunan Rumah Surabaya.png"
+                alt="Company History 4"
+                className="w-full h-48 object-cover rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, y: 50 }}
@@ -216,42 +254,6 @@ export function AboutPageContent() {
                   modern.
                 </p>
               </div>
-            </motion.div>
-            <motion.div
-              className="grid grid-cols-2 gap-4"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <motion.img
-                src="/placeholder.svg?height=300&width=300"
-                alt="Company History 1"
-                className="w-full h-48 object-cover rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.img
-                src="/placeholder.svg?height=300&width=300"
-                alt="Company History 2"
-                className="w-full h-48 object-cover rounded-lg mt-8"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.img
-                src="/placeholder.svg?height=300&width=300"
-                alt="Company History 3"
-                className="w-full h-48 object-cover rounded-lg -mt-8"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.img
-                src="/placeholder.svg?height=300&width=300"
-                alt="Company History 4"
-                className="w-full h-48 object-cover rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
             </motion.div>
           </div>
         </div>
