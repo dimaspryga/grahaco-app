@@ -64,7 +64,7 @@ export function Navbar() {
                   <Link href="/services/desain">Desain</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/services/kelola-properti">Kelola Properti</Link>
+                  <Link href="#">Kelola Properti</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

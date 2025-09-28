@@ -1,10 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useMemo } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { useState, useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,68 +18,85 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Search, Filter, MessageCircle, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-import { motion } from "framer-motion"
-import type { LucideIcon } from "lucide-react"
+} from "@/components/ui/breadcrumb";
+import {
+  Search,
+  Filter,
+  MessageCircle,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
 
 interface Service {
-  id: number
-  title: string
-  description: string
-  image: string
-  category: string
-  price: string
-  features: string[]
-  slug: string
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  price: string;
+  features: string[];
+  slug: string;
 }
 
 interface ServicePageLayoutProps {
-  title: string
-  description: string
-  icon: LucideIcon
-  services: Service[]
-  serviceType: string
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  services: Service[];
+  serviceType: string;
 }
 
-export function ServicePageLayout({ title, description, icon: Icon, services, serviceType }: ServicePageLayoutProps) {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("")
-  const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 6
+export function ServicePageLayout({
+  title,
+  description,
+  icon: Icon,
+  services,
+  serviceType,
+}: ServicePageLayoutProps) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   // Get unique categories
   const categories = useMemo(() => {
-    const cats = ["", ...new Set(services.map((service) => service.category))]
-    return cats
-  }, [services])
+    const cats = ["", ...new Set(services.map((service) => service.category))];
+    return cats;
+  }, [services]);
 
   // Filter services
   const filteredServices = useMemo(() => {
     return services.filter((service) => {
       const matchesSearch =
         service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.description.toLowerCase().includes(searchTerm.toLowerCase())
-      const matchesCategory = selectedCategory === "" || service.category === selectedCategory
-      return matchesSearch && matchesCategory
-    })
-  }, [services, searchTerm, selectedCategory])
+        service.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory =
+        selectedCategory === "" || service.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [services, searchTerm, selectedCategory]);
 
   // Pagination
-  const totalPages = Math.ceil(filteredServices.length / itemsPerPage)
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const paginatedServices = filteredServices.slice(startIndex, startIndex + itemsPerPage)
+  const totalPages = Math.ceil(filteredServices.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedServices = filteredServices.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const handleWhatsAppContact = (serviceName: string) => {
     window.open(
-      `https://wa.me/6281234567890?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20${serviceName}`,
-      "_blank",
-    )
-  }
+      `https://wa.me/6285730134736?text=Halo%20Grahaco,%20saya%20tertarik%20dengan%20layanan%20${serviceName}`,
+      "_blank"
+    );
+  };
 
   const handleDetailClick = (slug: string) => {
-    window.location.href = `/services/${serviceType}/${slug}`
-  }
+    window.location.href = `/services/${serviceType}/${slug}`;
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -118,8 +141,12 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
               </motion.div>
             </div>
             <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">{title}</h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{description}</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+                {title}
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                {description}
+              </p>
             </div>
           </motion.div>
         </div>
@@ -154,7 +181,9 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
                   ))}
                 </select>
               </div>
-              <div className="text-sm text-muted-foreground">{filteredServices.length} layanan ditemukan</div>
+              <div className="text-sm text-muted-foreground">
+                {filteredServices.length} layanan ditemukan
+              </div>
             </div>
           </div>
         </div>
@@ -165,7 +194,9 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {paginatedServices.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-lg text-muted-foreground">Tidak ada layanan yang ditemukan.</p>
+              <p className="text-lg text-muted-foreground">
+                Tidak ada layanan yang ditemukan.
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,12 +211,18 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
                   <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-card h-full">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <img
-                        src={service.image || "/placeholder.svg?height=300&width=400"}
+                        src={
+                          service.image ||
+                          "/placeholder.svg?height=300&width=400"
+                        }
                         alt={service.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-background/90 text-foreground">
+                        <Badge
+                          variant="secondary"
+                          className="bg-background/90 text-foreground"
+                        >
                           {service.category}
                         </Badge>
                       </div>
@@ -194,13 +231,16 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
                       <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">
                         {service.title}
                       </CardTitle>
-                      <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
-                      <div className="text-lg font-semibold text-primary">{service.price}</div>
+                      {/* <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
+                      <div className="text-lg font-semibold text-primary">{service.price}</div> */}
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <ul className="space-y-1">
+                      {/* <ul className="space-y-1">
                         {service.features.slice(0, 3).map((feature, index) => (
-                          <li key={index} className="flex items-center text-sm text-muted-foreground">
+                          <li
+                            key={index}
+                            className="flex items-center text-sm text-muted-foreground"
+                          >
                             <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3"></div>
                             {feature}
                           </li>
@@ -210,9 +250,9 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
                             +{service.features.length - 3} fitur lainnya
                           </li>
                         )}
-                      </ul>
+                      </ul> */}
                       <div className="flex flex-col sm:flex-row gap-2 pt-2">
-                        <Button
+                        {/* <Button
                           onClick={() => handleDetailClick(service.slug)}
                           variant="default"
                           size="sm"
@@ -220,7 +260,7 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
                         >
                           Detail
                           <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        </Button> */}
                         <Button
                           onClick={() => handleWhatsAppContact(service.title)}
                           variant="outline"
@@ -251,22 +291,26 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
                 Sebelumnya
               </Button>
 
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <Button
-                  key={page}
-                  variant={currentPage === page ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setCurrentPage(page)}
-                  className="min-w-[40px]"
-                >
-                  {page}
-                </Button>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <Button
+                    key={page}
+                    variant={currentPage === page ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setCurrentPage(page)}
+                    className="min-w-[40px]"
+                  >
+                    {page}
+                  </Button>
+                )
+              )}
 
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
                 disabled={currentPage === totalPages}
               >
                 Selanjutnya
@@ -277,5 +321,5 @@ export function ServicePageLayout({ title, description, icon: Icon, services, se
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -47,12 +47,12 @@ export function GallerySection() {
                     height={300}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  {/* <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Button size="sm" variant="secondary" className="gap-2">
                       <ExternalLink className="h-4 w-4" />
                       Lihat Detail
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
                 <CardContent className="p-6 space-y-4">
                   <div className="space-y-3">

@@ -55,7 +55,7 @@ export function useServicesData() {
         "Tenant Management",
         "Investment Advisory",
       ],
-      href: "/services/kelola-properti",
+      href: "#",
       color: "text-green-600",
       bgColor: "bg-green-50",
     },

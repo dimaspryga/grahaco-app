@@ -47,7 +47,7 @@ export function useGalleryData() {
     },
     {
       id: 4,
-      title: "Konstruksi Kontraktor",
+      title: "Konstruksi",
       category: "Kontraktor",
       image: "/proses pembangunan/Pembangunan Rumah Surabaya.png",
       description: "Konstruksi rumah baru dengan standar kualitas tinggi",
