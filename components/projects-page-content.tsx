@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Search, MapPin, Calendar, ExternalLink } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { useGalleryData, useProjectFilter } from "@/hooks/use-gallery-data"
-import { Breadcrumb } from "@/components/breadcrumb"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Search, MapPin, Calendar, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { useGalleryData, useProjectFilter } from "@/hooks/use-gallery-data";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export function ProjectsPageContent() {
-  const { projects } = useGalleryData()
+  const { projects } = useGalleryData();
   const {
     searchTerm,
     setSearchTerm,
@@ -22,10 +22,13 @@ export function ProjectsPageContent() {
     setCurrentPage,
     categories,
     filterProjects,
-  } = useProjectFilter()
+  } = useProjectFilter();
 
-  const itemsPerPage = 9
-  const { currentProjects, totalPages } = filterProjects(projects, itemsPerPage)
+  const itemsPerPage = 9;
+  const { currentProjects, totalPages } = filterProjects(
+    projects,
+    itemsPerPage
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -39,10 +42,12 @@ export function ProjectsPageContent() {
         <div className="container mx-auto px-4 max-w-7xl">
           <Breadcrumb items={[{ label: "Galeri Proyek" }]} />
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Galeri Proyek</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Galeri Proyek
+            </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Lihat berbagai proyek yang telah kami selesaikan dengan standar kualitas tinggi dan kepuasan klien yang
-              maksimal.
+              Lihat berbagai proyek yang telah kami selesaikan dengan standar
+              kualitas tinggi dan kepuasan klien yang maksimal.
             </p>
           </div>
         </div>
@@ -70,11 +75,13 @@ export function ProjectsPageContent() {
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category ? "default" : "outline"
+                  }
                   size="sm"
                   onClick={() => {
-                    setSelectedCategory(category)
-                    setCurrentPage(1)
+                    setSelectedCategory(category);
+                    setCurrentPage(1);
                   }}
                 >
                   {category === "All" ? "Semua" : category}
@@ -114,7 +121,7 @@ export function ProjectsPageContent() {
                       {project.category}
                     </Badge>
                   </div>
-                  <CardContent className="p-6 space-y-4">
+                  {/* <CardContent className="p-6 space-y-4">
                     <div>
                       <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                         {project.title}
@@ -153,7 +160,7 @@ export function ProjectsPageContent() {
                         </a>
                       </Button>
                     </div>
-                  </CardContent>
+                  </CardContent> */}
                 </Card>
               </motion.div>
             ))}
@@ -167,20 +174,22 @@ export function ProjectsPageContent() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex justify-center mt-12 gap-2"
             >
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <Button
-                  key={page}
-                  variant={currentPage === page ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setCurrentPage(page)}
-                >
-                  {page}
-                </Button>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <Button
+                    key={page}
+                    variant={currentPage === page ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </Button>
+                )
+              )}
             </motion.div>
           )}
         </div>
       </section>
     </div>
-  )
+  );
 }
